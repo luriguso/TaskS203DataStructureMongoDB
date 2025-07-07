@@ -1,0 +1,104 @@
+{
+  "$jsonSchema": {
+  "type": "object",
+  "required": [
+    "_id",
+    "creation_date",
+    "description",
+    "name",
+    "owner",
+    "subscribers",
+    "videos"
+  ],
+  "properties": {
+    "_id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "creation_date": {
+      "$ref": "#/$defs/Date"
+    },
+    "description": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "required": [
+        "_id",
+        "avatar",
+        "username"
+      ],
+      "properties": {
+        "_id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      }
+    },
+    "subscribers": {
+      "type": "integer"
+    },
+    "videos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "_id",
+          "published_at",
+          "thumbnail",
+          "title"
+        ],
+        "properties": {
+          "_id": {
+            "$ref": "#/$defs/ObjectId"
+          },
+          "published_at": {
+            "$ref": "#/$defs/Date"
+          },
+          "thumbnail": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ObjectId": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{24}$"
+        }
+      },
+      "required": [
+        "$oid"
+      ],
+      "additionalProperties": false
+    },
+    "Date": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false
+    }
+  }
+  }
+}

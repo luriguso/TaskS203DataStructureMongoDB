@@ -1,0 +1,65 @@
+{
+  "_id": { "$oid": "622c73c81a73fadb78dca972" },
+  "title": "Fishing with Grandpa",
+  "description": "Peaceful morning fishing session with my grandpa in the Haitian countryside.",
+  "size": "2.3G",
+  "file_name": "fishing_grandpa.mp4",
+  "duration": 412.6,
+  "thumbnail": "fishing_thumbnail.png",
+  "views": 2045,
+  "likes": 56,
+  "dislikes": 2,
+  "status": "public",
+  "author": {
+    "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3a8" },
+    "username": "piratinyo32",
+    "avatar": "user_thumbnail.jpg"
+  },
+  "tag": [
+    "fishing",
+    "grandpa",
+    "morning",
+    "Haiti vibes"
+  ],
+  "comments": [
+    {
+      "_id": { "$oid": "6a8f8c7b2e6b2a30c745f5e3" },
+      "text": "This video is pure peace. I love the setting!",
+      "user": {
+        "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3b1" },
+        "username": "nature_lover92",
+        "avatar": "nature_avatar.jpg"
+      },
+      "date_time": { "$date": "2023-04-18T09:32:00Z" },
+      "comments_reactions": [
+        {
+          "users_id": { "$oid": "5f8d8c7b5e6b2a30c745f3b1" },
+          "reaction_date": { "$date": "2023-04-18T10:00:00Z" },
+          "type": "like"
+        },
+        {
+          "users_id": { "$oid": "7a9d8c7b6e6b2a30c745f3c7" },
+          "reaction_date": { "$date": "2023-04-18T10:05:00Z" },
+          "type": "like"
+        }
+      ]
+    },
+    {
+      "_id": { "$oid": "6a8f8c9b3e7b2a30c745f5e4" },
+      "text": "I miss days like these with my grandfather.",
+      "user": {
+        "_id": { "$oid": "6b9d9d7b7e6b2a30c745f3d8" },
+        "username": "emotional_wave",
+        "avatar": "emo_avatar.jpg"
+      },
+      "date_time": { "$date": "2023-04-19T14:15:00Z" },
+      "comments_reactions": [
+        {
+          "users_id": { "$oid": "7a9d8c7b6e6b2a30c745f3c7" },
+          "reaction_date": { "$date": "2023-04-19T14:20:00Z" },
+          "type": "like"
+        }
+      ]
+    }
+  ]
+}

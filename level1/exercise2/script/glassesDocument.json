@@ -1,0 +1,73 @@
+{
+  "_id": { "$oid": "64b7f1c2c8a4a43a9ef21a00" },
+  "glasses": [
+    {
+      "_id": { "$oid": "64b7f1c2c8a4a43a9ef21a01" },
+      "brand": "Ray-Ban",
+      "frame": {
+        "color": "negro",
+        "type": "metalica"
+      },
+      "lens": {
+        "colors": ["gris", "azul"],
+        "graduation": {
+          "left": 1.25,
+          "right": 1.00
+        }
+      },
+      "price": 129.99,
+      "sales_history": [
+        {
+          "_id": { "$oid": "64b7f1c2c8a4a43a9ef21a10" },
+          "customer": {
+            "_id": { "$oid": "64b7f1c2c8a4a43a9ef21b01" },
+            "name": "Ana López",
+            "address": "Calle Mayor 12, Madrid",
+            "telephone": "600123456",
+            "email": "ana.lopez@example.com",
+            "date_register": { "$date": "2023-05-10T00:00:00Z" },
+            "referred_by": null
+          },
+          "employee": {
+            "_id": { "$oid": "64b7f1c2c8a4a43a9ef21c01" },
+            "name": "Carlos Pérez"
+          },
+          "sale_date": { "$date": "2024-01-15T10:30:00Z" }
+        },
+        {
+          "_id": { "$oid": "64b7f1c2c8a4a43a9ef21a11" },
+          "customer": {
+            "_id": { "$oid": "64b7f1c2c8a4a43a9ef21b02" },
+            "name": "Luis Torres",
+            "address": "Avenida del Sol 8, Sevilla",
+            "telephone": "611987654",
+            "email": "luis.torres@example.com",
+            "date_register": { "$date": "2023-11-22T00:00:00Z" },
+            "referred_by": null
+          },
+          "employee": {
+            "_id": { "$oid": "64b7f1c2c8a4a43a9ef21c02" },
+            "name": "Marta García"
+          },
+          "sale_date": { "$date": "2025-03-08T15:45:00Z" }
+        }
+      ],
+      "provider": {
+        "_id": { "$oid": "64b7f1c2c8a4a43a9ef21d01" },
+        "name": "Ópticas Globales S.A.",
+        "address": {
+          "street": "Carrer de Mallorca",
+          "number": "203",
+          "floor": "2",
+          "door": "B",
+          "city": "Barcelona",
+          "zip_code": "08036",
+          "country": "España"
+        },
+        "phone": "+34 931234567",
+        "fax": "+34 931234568",
+        "nif": "A08012345"
+      }
+    }
+  ]
+}
