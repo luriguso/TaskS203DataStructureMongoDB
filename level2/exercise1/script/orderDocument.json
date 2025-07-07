@@ -1,0 +1,67 @@
+{
+  "_id": { "$oid": "64c1f5a5f1e3a0abcde12345" },
+  "additional_information": "Entregar en portería si no hay respuesta",
+  "address": {
+    "door": "B",
+    "floor": "3",
+    "locality": "Valencia",
+    "number": 45,
+    "postal_code": "46001",
+    "province": "Valencia",
+    "street": "Calle Colón"
+  },
+  "date-time": { "$date": "2025-07-07T10:00:00Z" },
+  "delivery_details": {
+    "_id": { "$oid": "64c1f5a5f1e3a0abcde12346" },
+    "address": {
+      "door": "B",
+      "floor": "3",
+      "locality": "Valencia",
+      "number": 45,
+      "postal_code": "46001",
+      "province": "Valencia",
+      "street": "Calle Colón"
+    },
+    "last_name": "González",
+    "name": "Lucía",
+    "telephone": "612345678"
+  },
+  "delivery_time": { "$date": "2025-07-07T11:30:00Z" },
+  "employee": {
+    "_id": { "$oid": "64c1f5a5f1e3a0abcde12347" },
+    "last_name": "Martínez",
+    "name": "Carlos",
+    "NIF": "12345678A",
+    "role": "Repartidor",
+    "telephone": "698765432"
+  },
+  "items": [
+    {
+      "_id": { "$oid": "64c1f5a5f1e3a0abcde12348" },
+      "name": "Pizza Margarita",
+      "description": "Pizza clásica con tomate, mozzarella y albahaca",
+      "image_url": null,
+      "price": 9.5,
+      "quantity": 1,
+      "type": "comida",
+      "category": {
+        "name": "Pizza",
+        "dough_types": ["fina", "gruesa", "integral"]
+      }
+    },
+    {
+      "_id": { "$oid": "64c1f5a5f1e3a0abcde12349" },
+      "name": "Refresco Cola",
+      "description": "Botella de 500ml",
+      "image_url": null,
+      "price": 1.5,
+      "quantity": 2,
+      "type": "bebida"
+    }
+  ],
+  "service_type": "delivery",
+  "status": "entregado",
+  "store_id": { "$oid": "64c1f5a5f1e3a0abcde12350" },
+  "total_price": 12,
+  "total_quantity": 3
+}

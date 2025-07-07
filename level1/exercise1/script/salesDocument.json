@@ -1,0 +1,100 @@
+{
+  "_id": { "$oid": "60dbf6f4f1c2b34a6c9e0001" },
+  "customers": [
+    {
+      "_id": { "$oid": "60dbf6f4f1c2b34a6c9e0002" },
+      "name": "Laura Fernández",
+      "address": "Calle Luna 12, 3ºA, Madrid",
+      "telephone": "+34 611 234 567",
+      "email": "laura.fernandez@example.com",
+      "date_register": { "$date": "2024-10-01T09:00:00Z" },
+      "referred_by": null,
+      "purchase_history": [
+        {
+          "_id": { "$oid": "60dbf6f4f1c2b34a6c9e1001" },
+          "employee": {
+            "_id": { "$oid": "60dbf6f4f1c2b34a6c9e2001" },
+            "name": "Miguel Ruiz"
+          },
+          "glasses": {
+            "_id": { "$oid": "60dbf6f4f1c2b34a6c9e3001" },
+            "brand": "Ray-Ban",
+            "frame": {
+              "color": "negro",
+              "type": "metalica"
+            },
+            "lens": {
+              "colors": ["transparente"],
+              "graduation": {
+                "left": 1.25,
+                "right": 1.75
+              }
+            },
+            "price": 145.50,
+            "provider": {
+              "_id": { "$oid": "60dbf6f4f1c2b34a6c9e4001" },
+              "name": "Proveedora Óptica SL",
+              "address": {
+                "street": "Av. Proveedores",
+                "number": "23",
+                "floor": "1",
+                "door": "B",
+                "city": "Barcelona",
+                "postal_code": "08010",
+                "country": "España"
+              },
+              "telephone": "+34 931 000 111",
+              "fax": "+34 931 000 112",
+              "nif": "B12345678"
+            }
+          },
+          "quantity": 1,
+          "sale_date": { "$date": "2025-01-20T10:30:00Z" },
+          "total_price": 145.50
+        },
+        {
+          "_id": { "$oid": "60dbf6f4f1c2b34a6c9e1002" },
+          "employee": {
+            "_id": { "$oid": "60dbf6f4f1c2b34a6c9e2002" },
+            "name": "Sofía Martínez"
+          },
+          "glasses": {
+            "_id": { "$oid": "60dbf6f4f1c2b34a6c9e3002" },
+            "brand": "Oakley",
+            "frame": {
+              "color": "azul",
+              "type": "pasta"
+            },
+            "lens": {
+              "colors": ["verde", "gris"],
+              "graduation": {
+                "left": 0.75,
+                "right": 1.00
+              }
+            },
+            "price": 170.00,
+            "provider": {
+              "_id": { "$oid": "60dbf6f4f1c2b34a6c9e4002" },
+              "name": "Lentes Premium",
+              "address": {
+                "street": "Calle Comercio",
+                "number": "15",
+                "floor": "2",
+                "door": "A",
+                "city": "Valencia",
+                "postal_code": "46001",
+                "country": "España"
+              },
+              "telephone": "+34 961 555 333",
+              "fax": "+34 961 555 334",
+              "nif": "B98765432"
+            }
+          },
+          "quantity": 2,
+          "sale_date": { "$date": "2025-03-10T16:45:00Z" },
+          "total_price": 340.00
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "_id": { "$oid": "5f8d8c7b1e6b1a60c845f3a9" },
+  "owner": {
+    "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3a8" },
+    "username": "piratinyo32",
+    "avatar": "user_thumbnail.jpg"
+  },
+  "name": "Haiti Vibes",
+  "description": "Capturing the energy and people of Haiti.",
+  "state": "public",
+  "created_at": { "$date": "2019-02-01T00:00:00Z" },
+  "videos": [
+    {
+      "_id": { "$oid": "611b635450a65fdeb46fb970" },
+      "title": "Haitian Street Music",
+      "thumbnail": "street_music.png",
+      "duration": 512.3,
+      "added_at": { "$date": "2019-02-02T00:00:00Z" },
+      "position": 1
+    },
+    {
+      "_id": { "$oid": "611b635450a65fdeb46fb971" },
+      "title": "Daily Life in Port-au-Prince",
+      "thumbnail": "port_au_prince.png",
+      "duration": 298.7,
+      "added_at": { "$date": "2019-02-03T00:00:00Z" },
+      "position": 2
+    }
+  ]
+}

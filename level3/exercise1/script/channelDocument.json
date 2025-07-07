@@ -1,0 +1,26 @@
+{
+  "_id": { "$oid": "611b63b4a0a15fdeb46fb961" },
+  "owner": {
+    "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3a9" },
+    "username": "vidaCaribe",
+    "avatar": "avatar_caribe.jpg"
+  },
+  "name": "Sabores del Caribe",
+  "description": "Una mirada auténtica a la cocina, música y vida cotidiana del Caribe.",
+  "creation_date": { "$date": "2019-03-15T00:00:00Z" },
+  "subscribers": 1240,
+  "videos": [
+    {
+      "_id": { "$oid": "611b635450a65fdeb46fb970" },
+      "title": "Cocinando pescado en la playa",
+      "thumbnail": "pescado_thumbnail.jpg",
+      "published_at": { "$date": "2023-01-20T00:00:00Z" }
+    },
+    {
+      "_id": { "$oid": "611b635450a65fdeb46fb971" },
+      "title": "Carnaval callejero 2023",
+      "thumbnail": "carnaval_thumbnail.jpg",
+      "published_at": { "$date": "2023-02-10T00:00:00Z" }
+    }
+  ]
+}

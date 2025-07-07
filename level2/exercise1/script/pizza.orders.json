@@ -1,0 +1,284 @@
+{
+  "$jsonSchema": {
+  "type": "object",
+  "required": [
+    "_id",
+    "additional_information",
+    "address",
+    "date-time",
+    "delivery_details",
+    "delivery_time",
+    "employee",
+    "items",
+    "service_type",
+    "status",
+    "store_id",
+    "total_price",
+    "total_quantity"
+  ],
+  "properties": {
+    "_id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "additional_information": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "required": [
+        "door",
+        "floor",
+        "locality",
+        "number",
+        "postal_code",
+        "province",
+        "street"
+      ],
+      "properties": {
+        "door": {
+          "type": "string"
+        },
+        "floor": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "number": {
+          "type": "integer"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "province": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        }
+      }
+    },
+    "date-time": {
+      "$ref": "#/$defs/Date"
+    },
+    "delivery_details": {
+      "type": "object",
+      "required": [
+        "_id",
+        "address",
+        "last_name",
+        "name",
+        "telephone"
+      ],
+      "properties": {
+        "_id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "address": {
+          "type": "object",
+          "required": [
+            "door",
+            "floor",
+            "locality",
+            "number",
+            "postal_code",
+            "province",
+            "street"
+          ],
+          "properties": {
+            "door": {
+              "type": "string"
+            },
+            "floor": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "number": {
+              "type": "integer"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "province": {
+              "type": "string"
+            },
+            "street": {
+              "type": "string"
+            }
+          }
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        }
+      }
+    },
+    "delivery_time": {
+      "$ref": "#/$defs/Date"
+    },
+    "employee": {
+      "type": "object",
+      "required": [
+        "_id",
+        "last_name",
+        "name",
+        "NIF",
+        "role",
+        "telephone"
+      ],
+      "properties": {
+        "_id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "NIF": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "_id",
+          "description",
+          "image_url",
+          "name",
+          "price",
+          "quantity",
+          "type"
+        ],
+        "properties": {
+          "_id": {
+            "$ref": "#/$defs/ObjectId"
+          },
+          "category": {
+            "type": "object",
+            "required": [
+              "dough_types",
+              "name"
+            ],
+            "properties": {
+              "dough_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "$ref": "#/$defs/Double"
+              }
+            ]
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "service_type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "store_id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "total_price": {
+      "type": "integer"
+    },
+    "total_quantity": {
+      "type": "integer"
+    }
+  },
+  "$defs": {
+    "ObjectId": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{24}$"
+        }
+      },
+      "required": [
+        "$oid"
+      ],
+      "additionalProperties": false
+    },
+    "Double": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "$numberDouble": {
+              "enum": [
+                "Infinity",
+                "-Infinity",
+                "NaN"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Date": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false
+    }
+  }
+  }
+}

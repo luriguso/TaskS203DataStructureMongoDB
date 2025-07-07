@@ -1,0 +1,266 @@
+{
+  "$jsonSchema": {
+  "type": "object",
+  "required": [
+    "_id",
+    "glasses"
+  ],
+  "properties": {
+    "_id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "glasses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "_id",
+          "brand",
+          "frame",
+          "lens",
+          "price",
+          "sales_history",
+          "provider"
+        ],
+        "properties": {
+          "_id": {
+            "$ref": "#/$defs/ObjectId"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "frame": {
+            "type": "object",
+            "required": [
+              "color",
+              "type"
+            ],
+            "properties": {
+              "color": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": ["flotante", "pasta", "metalica"]
+              }
+            }
+          },
+          "lens": {
+            "type": "object",
+            "required": [
+              "colors",
+              "graduation"
+            ],
+            "properties": {
+              "colors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "graduation": {
+                "type": "object",
+                "required": [
+                  "left",
+                  "right"
+                ],
+                "properties": {
+                  "left": {
+                    "$ref": "#/$defs/Double"
+                  },
+                  "right": {
+                    "$ref": "#/$defs/Double"
+                  }
+                }
+              }
+            }
+          },
+          "price": {
+            "$ref": "#/$defs/Double"
+          },
+          "sales_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "_id",
+                "customer",
+                "employee",
+                "sale_date"
+              ],
+              "properties": {
+                "_id": {
+                  "$ref": "#/$defs/ObjectId"
+                },
+                "customer": {
+                  "type": "object",
+                  "required": [
+                    "_id",
+                    "name",
+                    "address",
+                    "telephone",
+                    "email",
+                    "date_register",
+                    "referred_by"
+                  ],
+                  "properties": {
+                    "_id": {
+                      "$ref": "#/$defs/ObjectId"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "telephone": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "date_register": {
+                      "$ref": "#/$defs/Date"
+                    },
+                    "referred_by": {
+                      "type": "null"
+                    }
+                  }
+                },
+                "employee": {
+                  "type": "object",
+                  "required": [
+                    "_id",
+                    "name"
+                  ],
+                  "properties": {
+                    "_id": {
+                      "$ref": "#/$defs/ObjectId"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "sale_date": {
+                  "$ref": "#/$defs/Date"
+                }
+              }
+            }
+          },
+          "provider": {
+            "type": "object",
+            "required": [
+              "_id",
+              "name",
+              "address",
+              "phone",
+              "fax",
+              "nif"
+            ],
+            "properties": {
+              "_id": {
+                "$ref": "#/$defs/ObjectId"
+              },
+              "name": {
+                "type": "string"
+              },
+              "address": {
+                "type": "object",
+                "required": [
+                  "city",
+                  "country",
+                  "door",
+                  "floor",
+                  "number",
+                  "street",
+                  "zip_code"
+                ],
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "door": {
+                    "type": "string"
+                  },
+                  "floor": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "string"
+                  },
+                  "street": {
+                    "type": "string"
+                  },
+                  "zip_code": {
+                    "type": "string"
+                  }
+                }
+              },
+              "phone": {
+                "type": "string"
+              },
+              "fax": {
+                "type": "string"
+              },
+              "nif": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ObjectId": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{24}$"
+        }
+      },
+      "required": [
+        "$oid"
+      ],
+      "additionalProperties": false
+    },
+    "Double": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "$numberDouble": {
+              "enum": [
+                "Infinity",
+                "-Infinity",
+                "NaN"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Date": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false
+    }
+  }
+  }
+}
