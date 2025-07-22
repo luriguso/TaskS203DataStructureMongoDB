@@ -1,67 +1,78 @@
 {
-  "_id": { "$oid": "64c1f5a5f1e3a0abcde12345" },
-  "additional_information": "Entregar en portería si no hay respuesta",
+  "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a456" },
+  "additional_information": "Entrega urgente, llamar antes.",
   "address": {
-    "door": "B",
+    "door": "2B",
     "floor": "3",
-    "locality": "Valencia",
-    "number": 45,
-    "postal_code": "46001",
-    "province": "Valencia",
-    "street": "Calle Colón"
+    "locality": "Madrid",
+    "number": 24,
+    "postal_code": "28013",
+    "province": "Madrid",
+    "street": "Gran Vía"
   },
-  "date-time": { "$date": "2025-07-07T10:00:00Z" },
+  "date-time": { "$date": "2024-06-10T12:30:00Z" },
   "delivery_details": {
-    "_id": { "$oid": "64c1f5a5f1e3a0abcde12346" },
+    "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a789" },
     "address": {
-      "door": "B",
-      "floor": "3",
-      "locality": "Valencia",
-      "number": 45,
-      "postal_code": "46001",
-      "province": "Valencia",
-      "street": "Calle Colón"
+      "door": "1A",
+      "floor": "5",
+      "locality": "Madrid",
+      "number": 15,
+      "postal_code": "28014",
+      "province": "Madrid",
+      "street": "Calle Mayor"
     },
-    "last_name": "González",
-    "name": "Lucía",
-    "telephone": "612345678"
+    "last_name": "Pérez",
+    "name": "Luis",
+    "telephone": "654321987"
   },
-  "delivery_time": { "$date": "2025-07-07T11:30:00Z" },
+  "delivery_time": { "$date": "2024-06-10T13:00:00Z" },
   "employee": {
-    "_id": { "$oid": "64c1f5a5f1e3a0abcde12347" },
-    "last_name": "Martínez",
-    "name": "Carlos",
-    "NIF": "12345678A",
+    "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a654" },
+    "last_name": "García",
+    "name": "Ana",
+    "NIF": "12345678X",
     "role": "Repartidor",
-    "telephone": "698765432"
+    "telephone": "612345678"
   },
   "items": [
     {
-      "_id": { "$oid": "64c1f5a5f1e3a0abcde12348" },
-      "name": "Pizza Margarita",
-      "description": "Pizza clásica con tomate, mozzarella y albahaca",
-      "image_url": null,
-      "price": 9.5,
-      "quantity": 1,
-      "type": "comida",
+      "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a123" },
       "category": {
-        "name": "Pizza",
-        "dough_types": ["fina", "gruesa", "integral"]
-      }
+        "dough_types": ["thin", "thick"],
+        "name": "Pizza"
+      },
+      "description": "Pizza de pepperoni tamaño grande",
+      "image_url": null,
+      "name": "Pepperoni",
+      "price": 15,
+      "quantity": 2,
+      "type": "food"
     },
     {
-      "_id": { "$oid": "64c1f5a5f1e3a0abcde12349" },
-      "name": "Refresco Cola",
-      "description": "Botella de 500ml",
+      "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a124" },
+      "category": {
+        "dough_types": ["classic"],
+        "name": "Pizza"
+      },
+      "description": "Pizza margarita individual",
       "image_url": null,
-      "price": 1.5,
-      "quantity": 2,
-      "type": "bebida"
+      "name": "Margarita",
+      "price": { "$numberDouble": "8.5" },
+      "quantity": 1,
+      "type": "food"
     }
   ],
-  "service_type": "delivery",
-  "status": "entregado",
-  "store_id": { "$oid": "64c1f5a5f1e3a0abcde12350" },
-  "total_price": 12,
+  "service_type": "Delivery",
+  "status": "In Progress",
+  "store": {
+    "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a321" },
+    "address": "Av. América, 15",
+    "postal_code": "28002",
+    "town": "Madrid",
+    "province": "Madrid"
+  },
+  "total_price": 38,
   "total_quantity": 3
 }
+

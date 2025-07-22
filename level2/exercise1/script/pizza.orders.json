@@ -12,7 +12,7 @@
     "items",
     "service_type",
     "status",
-    "store_id",
+    "store",
     "total_price",
     "total_quantity"
   ],
@@ -223,8 +223,32 @@
     "status": {
       "type": "string"
     },
-    "store_id": {
-      "$ref": "#/$defs/ObjectId"
+    "store": {
+      "type": "object",
+      "required": [
+        "_id",
+        "address",
+        "postal_code",
+        "town",
+        "province"
+      ],
+      "properties": {
+        "_id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "address": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "town": {
+          "type": "string"
+        },
+        "province": {
+          "type": "string"
+        }
+      }
     },
     "total_price": {
       "type": "integer"
