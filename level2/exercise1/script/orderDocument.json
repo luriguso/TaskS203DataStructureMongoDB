@@ -1,78 +1,70 @@
 {
-  "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a456" },
-  "additional_information": "Entrega urgente, llamar antes.",
-  "address": {
-    "door": "2B",
-    "floor": "3",
-    "locality": "Madrid",
-    "number": 24,
-    "postal_code": "28013",
-    "province": "Madrid",
-    "street": "Gran Vía"
-  },
-  "date-time": { "$date": "2024-06-10T12:30:00Z" },
+  "_id": "64c9f2dbe25dce5f9e234a01",
+  "additional_information": "Cliente pidió sin queso.",
+  "date-time": "2025-07-19T12:30:00Z",
   "delivery_details": {
-    "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a789" },
+    "_id": "64c9f2dbe25dce5f9e234a02",
     "address": {
-      "door": "1A",
-      "floor": "5",
-      "locality": "Madrid",
-      "number": 15,
-      "postal_code": "28014",
-      "province": "Madrid",
-      "street": "Calle Mayor"
+      "door": "3A",
+      "floor": "3",
+      "locality": "Barcelona",
+      "number": 45,
+      "postal_code": "08015",
+      "province": "Barcelona",
+      "street": "Carrer de Sants"
     },
-    "last_name": "Pérez",
-    "name": "Luis",
-    "telephone": "654321987"
-  },
-  "delivery_time": { "$date": "2024-06-10T13:00:00Z" },
-  "employee": {
-    "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a654" },
-    "last_name": "García",
+    "last_name": "Rodríguez",
     "name": "Ana",
-    "NIF": "12345678X",
-    "role": "Repartidor",
     "telephone": "612345678"
+  },
+  "delivery_time": "2025-07-19T13:15:00Z",
+  "employee": {
+    "_id": "64c9f2dbe25dce5f9e234a03",
+    "last_name": "García",
+    "name": "Miguel",
+    "NIF": "87654321Z",
+    "role": "Repartidor",
+    "telephone": "699123456"
   },
   "items": [
     {
-      "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a123" },
+      "_id": "64c9f2dbe25dce5f9e234a10",
       "category": {
-        "dough_types": ["thin", "thick"],
+        "dough_types": ["fina"],
         "name": "Pizza"
       },
-      "description": "Pizza de pepperoni tamaño grande",
+      "description": "Pizza barbacoa grande",
       "image_url": null,
-      "name": "Pepperoni",
-      "price": 15,
-      "quantity": 2,
-      "type": "food"
+      "name": "Pizza Barbacoa",
+      "price": 13,
+      "quantity": 1,
+      "type": "comida"
     },
     {
-      "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a124" },
+      "_id": "64c9f2dbe25dce5f9e234a11",
       "category": {
-        "dough_types": ["classic"],
-        "name": "Pizza"
+        "dough_types": ["normal"],
+        "name": "Bebida"
       },
-      "description": "Pizza margarita individual",
+      "description": "Lata de cerveza 330ml",
       "image_url": null,
-      "name": "Margarita",
-      "price": { "$numberDouble": "8.5" },
-      "quantity": 1,
-      "type": "food"
+      "name": "Cerveza",
+      "price": 2,
+      "quantity": 2,
+      "type": "bebida"
     }
   ],
-  "service_type": "Delivery",
-  "status": "In Progress",
+  "service_type": "domicilio",
+  "status": "entregado",
   "store": {
-    "_id": { "$oid": "60d5ec49f1b3b5e7d5d2a321" },
-    "address": "Av. América, 15",
-    "postal_code": "28002",
-    "town": "Madrid",
-    "province": "Madrid"
+    "_id": "64c9f2dbe25dce5f9e234a04",
+    "name": "Pizza Rápida Sants",
+    "address": {
+      "postal_code": "08015",
+      "town": "Barcelona",
+      "province": "Barcelona"
+    }
   },
-  "total_price": 38,
+  "total_price": 17,
   "total_quantity": 3
 }
-

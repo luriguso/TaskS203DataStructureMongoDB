@@ -1,0 +1,206 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "_id",
+      "name",
+      "address",
+      "telephone",
+      "email",
+      "date_register",
+      "referred_by",
+      "purchase_history"
+    ],
+    "properties": {
+      "_id": {
+        "$ref": "#/$defs/ObjectId"
+      },
+      "name": {
+        "bsonType": "string"
+      },
+      "address": {
+        "bsonType": "string"
+      },
+      "telephone": {
+        "bsonType": "string"
+      },
+      "email": {
+        "bsonType": "string"
+      },
+      "date_register": {
+        "$ref": "#/$defs/Date"
+      },
+      "referred_by": {
+        "bsonType": ["null", "string"]
+      },
+      "purchase_history": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": [
+            "_id",
+            "employee",
+            "glasses",
+            "quantity",
+            "sale_date",
+            "total_price"
+          ],
+          "properties": {
+            "_id": {
+              "$ref": "#/$defs/ObjectId"
+            },
+            "employee": {
+              "bsonType": "object",
+              "required": ["_id", "name"],
+              "properties": {
+                "_id": {
+                  "$ref": "#/$defs/ObjectId"
+                },
+                "name": {
+                  "bsonType": "string"
+                }
+              }
+            },
+            "glasses": {
+              "bsonType": "object",
+              "required": ["_id", "brand", "frame", "lens", "price", "provider"],
+              "properties": {
+                "_id": {
+                  "$ref": "#/$defs/ObjectId"
+                },
+                "brand": {
+                  "bsonType": "string"
+                },
+                "frame": {
+                  "bsonType": "object",
+                  "required": ["color", "type"],
+                  "properties": {
+                    "color": {
+                      "bsonType": "string"
+                    },
+                    "type": {
+                      "bsonType": "string",
+                      "enum": ["flotante", "pasta", "metalica"]
+                    }
+                  }
+                },
+                "lens": {
+                  "bsonType": "object",
+                  "required": ["colors", "graduation"],
+                  "properties": {
+                    "colors": {
+                      "bsonType": "array",
+                      "items": {
+                        "bsonType": "string"
+                      }
+                    },
+                    "graduation": {
+                      "bsonType": "object",
+                      "required": ["left", "right"],
+                      "properties": {
+                        "left": {
+                          "anyOf": [
+                            { "bsonType": "int" },
+                            { "$ref": "#/$defs/Double" }
+                          ]
+                        },
+                        "right": {
+                          "$ref": "#/$defs/Double"
+                        }
+                      }
+                    }
+                  }
+                },
+                "price": {
+                  "$ref": "#/$defs/Double"
+                },
+                "provider": {
+                  "bsonType": "object",
+                  "required": [
+                    "_id", "name", "address", "telephone", "fax", "nif"
+                  ],
+                  "properties": {
+                    "_id": {
+                      "$ref": "#/$defs/ObjectId"
+                    },
+                    "name": {
+                      "bsonType": "string"
+                    },
+                    "address": {
+                      "bsonType": "object",
+                      "required": ["street", "number", "floor", "door", "city", "postal_code", "country"],
+                      "properties": {
+                        "street": { "bsonType": "string" },
+                        "number": { "bsonType": "string" },
+                        "floor": { "bsonType": "string" },
+                        "door": { "bsonType": "string" },
+                        "city": { "bsonType": "string" },
+                        "postal_code": { "bsonType": "string" },
+                        "country": { "bsonType": "string" }
+                      }
+                    },
+                    "telephone": {
+                      "bsonType": "string"
+                    },
+                    "fax": {
+                      "bsonType": "string"
+                    },
+                    "nif": {
+                      "bsonType": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "quantity": {
+              "bsonType": "int"
+            },
+            "sale_date": {
+              "$ref": "#/$defs/Date"
+            },
+            "total_price": {
+              "$ref": "#/$defs/Double"
+            }
+          }
+        }
+      }
+    },
+    "$defs": {
+      "ObjectId": {
+        "bsonType": "object",
+        "required": ["$oid"],
+        "properties": {
+          "$oid": {
+            "bsonType": "string",
+            "pattern": "^[0-9a-fA-F]{24}$"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Double": {
+        "oneOf": [
+          { "bsonType": "double" },
+          {
+            "bsonType": "object",
+            "properties": {
+              "$numberDouble": {
+                "enum": ["Infinity", "-Infinity", "NaN"]
+              }
+            }
+          }
+        ]
+      },
+      "Date": {
+        "bsonType": "object",
+        "required": ["$date"],
+        "properties": {
+          "$date": {
+            "bsonType": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

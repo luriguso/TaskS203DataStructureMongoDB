@@ -1,7 +1,7 @@
 {
   "videos": [
     {
-      "_id": { "$oid": "633a1122d3c98a12a4efb123" },
+      "_id": "633a1122d3c98a12a4efb123",
       "title": "Sunset soccer match",
       "description": "Kids playing soccer at sunset in Port-au-Prince.",
       "size": "1.4G",
@@ -13,7 +13,7 @@
       "dislikes": 0,
       "status": "public",
       "author": {
-        "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3a8" },
+        "_id": "5f8d8c7b5e6b2a30c745f3a8",
         "username": "piratinyo32",
         "avatar": "user_thumbnail.jpg"
       },
@@ -25,23 +25,23 @@
       ],
       "comments": [
         {
-          "_id": { "$oid": "633a1199e4c98a12a4efb124" },
+          "_id": "633a1199e4c98a12a4efb124",
           "text": "This brought me back to my childhood!",
           "user": {
-            "_id": { "$oid": "6c8d7e6f1a6b2a10b745f3c1" },
+            "_id": "6c8d7e6f1a6b2a10b745f3c1",
             "username": "nostalgic90",
             "avatar": "avatar_nostalgic.jpg"
           },
-          "date_time": { "$date": "2023-07-05T17:25:00Z" },
+          "date_time": "2023-07-05T17:25:00Z",
           "comments_reactions": [
             {
-              "users_id": { "$oid": "6c8d7e6f1a6b2a10b745f3c1" },
-              "reaction_date": { "$date": "2023-07-05T17:26:00Z" },
+              "users_id": "6c8d7e6f1a6b2a10b745f3c1",
+              "reaction_date": "2023-07-05T17:26:00Z",
               "type": "like"
             },
             {
-              "users_id": { "$oid": "7f1d8e9a3c6b2a50c745f3c9" },
-              "reaction_date": { "$date": "2023-07-05T17:28:00Z" },
+              "users_id": "7f1d8e9a3c6b2a50c745f3c9",
+              "reaction_date": "2023-07-05T17:28:00Z",
               "type": "like"
             }
           ]
@@ -51,23 +51,23 @@
   ],
   "playlists": [
     {
-      "_id": { "$oid": "633a1133d3c98a12a4efb125" },
+      "_id": "633a1133d3c98a12a4efb125",
       "owner": {
-        "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3a8" },
+        "_id": "5f8d8c7b5e6b2a30c745f3a8",
         "username": "piratinyo32",
         "avatar": "user_thumbnail.jpg"
       },
       "name": "Haitian Playgrounds",
       "description": "Moments of fun and games across Haiti.",
       "state": "public",
-      "created_at": { "$date": "2020-10-15T00:00:00Z" },
+      "created_at": "2020-10-15T00:00:00Z",
       "videos": [
         {
-          "_id": { "$oid": "633a1122d3c98a12a4efb123" },
+          "_id": "633a1122d3c98a12a4efb123" ,
           "title": "Sunset soccer match",
           "thumbnail": "sunset_thumbnail.png",
           "duration": 278.4,
-          "added_at": { "$date": "2020-10-16T00:00:00Z" },
+          "added_at": "2020-10-16T00:00:00Z",
           "position": 1
         }
       ]
@@ -75,22 +75,22 @@
   ],
   "channels": [
     {
-      "_id": { "$oid": "633a1155d3c98a12a4efb126" },
+      "_id": "633a1155d3c98a12a4efb126",
       "owner": {
-        "_id": { "$oid": "5f8d8c7b5e6b2a30c745f3a8" },
+        "_id": "5f8d8c7b5e6b2a30c745f3a8",
         "username": "piratinyo32",
         "avatar": "user_thumbnail.jpg"
       },
       "name": "Everyday Haiti",
       "description": "Capturing raw and real moments of Haitian life.",
-      "creation_date": { "$date": "2019-01-05T00:00:00Z" },
+      "creation_date": "2019-01-05T00:00:00Z",
       "subscribers": 3,
       "videos": [
         {
-          "_id": { "$oid": "633a1122d3c98a12a4efb123" },
+          "_id": "633a1122d3c98a12a4efb123",
           "title": "Sunset soccer match",
           "thumbnail": "sunset_thumbnail.png",
-          "published_at": { "$date": "2023-07-04T00:00:00Z" }
+          "published_at": "2023-07-04T00:00:00Z"
         }
       ]
     }

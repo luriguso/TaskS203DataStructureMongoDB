@@ -1,266 +1,146 @@
 {
   "$jsonSchema": {
-  "type": "object",
-  "required": [
-    "_id",
-    "glasses"
-  ],
-  "properties": {
-    "_id": {
-      "$ref": "#/$defs/ObjectId"
-    },
-    "glasses": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [
-          "_id",
-          "brand",
-          "frame",
-          "lens",
-          "price",
-          "sales_history",
-          "provider"
-        ],
+    "bsonType": "object",
+    "required": [
+      "_id", "brand", "frame", "lens", "price", "sales_history", "provider"
+    ],
+    "properties": {
+      "_id": { "$ref": "#/$defs/ObjectId" },
+      "brand": { "bsonType": "string" },
+      "frame": {
+        "bsonType": "object",
+        "required": ["color", "type"],
         "properties": {
-          "_id": {
-            "$ref": "#/$defs/ObjectId"
+          "color": { "bsonType": "string" },
+          "type": {
+            "enum": ["flotante", "pasta", "metalica"]
+          }
+        },
+        "additionalProperties": false
+      },
+      "lens": {
+        "bsonType": "object",
+        "required": ["colors", "graduation"],
+        "properties": {
+          "colors": {
+            "bsonType": "array",
+            "items": { "bsonType": "string" }
           },
-          "brand": {
-            "type": "string"
-          },
-          "frame": {
-            "type": "object",
-            "required": [
-              "color",
-              "type"
-            ],
+          "graduation": {
+            "bsonType": "object",
+            "required": ["left", "right"],
             "properties": {
-              "color": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string",
-                "enum": ["flotante", "pasta", "metalica"]
-              }
-            }
-          },
-          "lens": {
-            "type": "object",
-            "required": [
-              "colors",
-              "graduation"
-            ],
-            "properties": {
-              "colors": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "graduation": {
-                "type": "object",
-                "required": [
-                  "left",
-                  "right"
-                ],
-                "properties": {
-                  "left": {
-                    "$ref": "#/$defs/Double"
-                  },
-                  "right": {
-                    "$ref": "#/$defs/Double"
-                  }
-                }
-              }
-            }
-          },
-          "price": {
-            "$ref": "#/$defs/Double"
-          },
-          "sales_history": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "_id",
-                "customer",
-                "employee",
-                "sale_date"
-              ],
+              "left": { "$ref": "#/$defs/Double" },
+              "right": { "$ref": "#/$defs/Double" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "price": { "$ref": "#/$defs/Double" },
+      "sales_history": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["_id", "customer", "employee", "sale_date"],
+          "properties": {
+            "_id": { "$ref": "#/$defs/ObjectId" },
+            "customer": {
+              "bsonType": "object",
+              "required": ["_id", "name", "address", "telephone", "email", "date_register", "referred_by"],
               "properties": {
-                "_id": {
-                  "$ref": "#/$defs/ObjectId"
-                },
-                "customer": {
-                  "type": "object",
-                  "required": [
-                    "_id",
-                    "name",
-                    "address",
-                    "telephone",
-                    "email",
-                    "date_register",
-                    "referred_by"
-                  ],
-                  "properties": {
-                    "_id": {
-                      "$ref": "#/$defs/ObjectId"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "address": {
-                      "type": "string"
-                    },
-                    "telephone": {
-                      "type": "string"
-                    },
-                    "email": {
-                      "type": "string"
-                    },
-                    "date_register": {
-                      "$ref": "#/$defs/Date"
-                    },
-                    "referred_by": {
-                      "type": "null"
-                    }
-                  }
-                },
-                "employee": {
-                  "type": "object",
-                  "required": [
-                    "_id",
-                    "name"
-                  ],
-                  "properties": {
-                    "_id": {
-                      "$ref": "#/$defs/ObjectId"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "sale_date": {
-                  "$ref": "#/$defs/Date"
+                "_id": { "$ref": "#/$defs/ObjectId" },
+                "name": { "bsonType": "string" },
+                "address": { "bsonType": "string" },
+                "telephone": { "bsonType": "string" },
+                "email": { "bsonType": "string" },
+                "date_register": { "$ref": "#/$defs/Date" },
+                "referred_by": {
+                  "anyOf": [
+                    { "bsonType": "null" },
+                    { "$ref": "#/$defs/ObjectId" }
+                  ]
                 }
-              }
-            }
+              },
+              "additionalProperties": false
+            },
+            "employee": {
+              "bsonType": "object",
+              "required": ["_id", "name"],
+              "properties": {
+                "_id": { "$ref": "#/$defs/ObjectId" },
+                "name": { "bsonType": "string" }
+              },
+              "additionalProperties": false
+            },
+            "sale_date": { "$ref": "#/$defs/Date" }
           },
-          "provider": {
-            "type": "object",
-            "required": [
-              "_id",
-              "name",
-              "address",
-              "phone",
-              "fax",
-              "nif"
-            ],
+          "additionalProperties": false
+        }
+      },
+      "provider": {
+        "bsonType": "object",
+        "required": ["_id", "name", "address", "phone", "fax", "nif"],
+        "properties": {
+          "_id": { "$ref": "#/$defs/ObjectId" },
+          "name": { "bsonType": "string" },
+          "address": {
+            "bsonType": "object",
+            "required": ["street", "number", "floor", "door", "city", "zip_code", "country"],
             "properties": {
-              "_id": {
-                "$ref": "#/$defs/ObjectId"
-              },
-              "name": {
-                "type": "string"
-              },
-              "address": {
-                "type": "object",
-                "required": [
-                  "city",
-                  "country",
-                  "door",
-                  "floor",
-                  "number",
-                  "street",
-                  "zip_code"
-                ],
-                "properties": {
-                  "city": {
-                    "type": "string"
-                  },
-                  "country": {
-                    "type": "string"
-                  },
-                  "door": {
-                    "type": "string"
-                  },
-                  "floor": {
-                    "type": "string"
-                  },
-                  "number": {
-                    "type": "string"
-                  },
-                  "street": {
-                    "type": "string"
-                  },
-                  "zip_code": {
-                    "type": "string"
-                  }
-                }
-              },
-              "phone": {
-                "type": "string"
-              },
-              "fax": {
-                "type": "string"
-              },
-              "nif": {
-                "type": "string"
+              "street": { "bsonType": "string" },
+              "number": { "bsonType": "string" },
+              "floor": { "bsonType": "string" },
+              "door": { "bsonType": "string" },
+              "city": { "bsonType": "string" },
+              "zip_code": { "bsonType": "string" },
+              "country": { "bsonType": "string" }
+            },
+            "additionalProperties": false
+          },
+          "phone": { "bsonType": "string" },
+          "fax": { "bsonType": "string" },
+          "nif": { "bsonType": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false,
+    "$defs": {
+      "ObjectId": {
+        "bsonType": "object",
+        "required": ["$oid"],
+        "properties": {
+          "$oid": {
+            "bsonType": "string",
+            "pattern": "^[0-9a-fA-F]{24}$"
+          }
+        }
+      },
+      "Double": {
+        "anyOf": [
+          { "bsonType": "double" },
+          {
+            "bsonType": "object",
+            "properties": {
+              "$numberDouble": {
+                "enum": ["Infinity", "-Infinity", "NaN"]
               }
             }
+          }
+        ]
+      },
+      "Date": {
+        "bsonType": "object",
+        "required": ["$date"],
+        "properties": {
+          "$date": {
+            "bsonType": "string",
+            "format": "date-time"
           }
         }
       }
     }
-  },
-  "$defs": {
-    "ObjectId": {
-      "type": "object",
-      "properties": {
-        "$oid": {
-          "type": "string",
-          "pattern": "^[0-9a-fA-F]{24}$"
-        }
-      },
-      "required": [
-        "$oid"
-      ],
-      "additionalProperties": false
-    },
-    "Double": {
-      "oneOf": [
-        {
-          "type": "number"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "$numberDouble": {
-              "enum": [
-                "Infinity",
-                "-Infinity",
-                "NaN"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "Date": {
-      "type": "object",
-      "properties": {
-        "$date": {
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "required": [
-        "$date"
-      ],
-      "additionalProperties": false
-    }
-  }
   }
 }
